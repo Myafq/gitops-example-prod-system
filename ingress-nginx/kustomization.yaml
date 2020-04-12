@@ -1,0 +1,5 @@
+bases:
+  - ../../gitops-example-base-system/ingress-nginx
+
+resources:
+  - ns.yml

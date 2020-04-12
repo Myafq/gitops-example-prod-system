@@ -1,0 +1,17 @@
+# For example we can override group name who have access to this particular namespace.
+patches:
+- target:
+   kind: RoleBinding
+   name: cluster-user
+  patch: |-
+   - op: replace
+     path: /subjects/0/name
+     value: prodUser  
+
+bases:
+  - ../../gitops-example-base-system/namespace
+commonLabels:
+  env: prod
+
+resources:
+  - ns.yml

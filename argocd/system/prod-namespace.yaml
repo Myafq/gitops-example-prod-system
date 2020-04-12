@@ -1,0 +1,17 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-namespace
+  namespace: argocd
+spec:
+  destination:
+    namespace: prod
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: prod/namespace
+    repoURL: https://github.com/Myafq/gitops-example-prod-system.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}

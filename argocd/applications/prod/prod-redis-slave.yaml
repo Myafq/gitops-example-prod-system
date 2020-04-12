@@ -1,0 +1,17 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-redis-slave
+  namespace: argocd
+spec:
+  destination:
+    namespace: prod
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: prod/redis-slave
+    repoURL: https://github.com/Myafq/gitops-example-prod.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
