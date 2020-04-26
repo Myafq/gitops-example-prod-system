@@ -1,0 +1,3 @@
+[submodule "gitops-example-base-system"]
+	path = gitops-example-base-system
+	url = https://github.com/Myafq/gitops-example-base-system.git
